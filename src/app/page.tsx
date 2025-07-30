@@ -1,103 +1,350 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { siteConfig } from "./data/config";
+import Terminal from "./components/Terminal";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [taglineIndex, setTaglineIndex] = useState(0);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Handle mouse movement for interactive elements
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      });
+    }
+  };
+  
+  // Rotate through taglines
+  useEffect(() => {
+    setIsLoaded(true);
+    
+    const interval = setInterval(() => {
+      setTaglineIndex((prev) => 
+        (prev + 1) % siteConfig.splash.taglines.length
+      );
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  return (
+    <div 
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className="min-h-[calc(100vh-80px)] flex flex-col bg-gray-900 text-gray-100 relative overflow-hidden"
+    >
+      {/* Generative background */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-purple-950"></div>
+        
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[url('/images/grid.svg')] bg-center opacity-[0.07]"></div>
+        
+        {/* Animated blobs */}
+        <motion.div 
+          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-indigo-600/20 blur-3xl"
+          animate={{
+            x: [0, 30, -20, 0],
+            y: [0, -30, 20, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        />
+        
+        <motion.div 
+          className="absolute bottom-1/4 right-1/3 w-80 h-80 rounded-full bg-purple-600/20 blur-3xl"
+          animate={{
+            x: [0, -40, 30, 0],
+            y: [0, 40, -30, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        />
+        
+        <motion.div 
+          className="absolute top-2/3 right-1/4 w-64 h-64 rounded-full bg-pink-600/20 blur-3xl"
+          animate={{
+            x: [0, 50, -40, 0],
+            y: [0, -20, 40, 0],
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        />
+      </div>
+      
+      {/* Noise texture overlay */}
+      <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none"></div>
+      
+      {/* Content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col justify-center min-h-[80vh]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          {/* Main content */}
+          <motion.div 
+            className="md:col-span-7 md:col-start-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            {/* Glitchy greeting */}
+            <motion.div 
+              className="mb-2 inline-block"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              <div className="relative inline-block px-3 py-1 text-sm font-mono text-indigo-300 overflow-hidden">
+                <div className="absolute inset-0 bg-indigo-900/30"></div>
+                <div className="relative z-10">$ {siteConfig.splash.greeting}</div>
+              </div>
+            </motion.div>
+            
+            {/* Name */}
+            <motion.h1 
+              className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+                {siteConfig.name}
+              </span>
+              <span className="inline-block ml-1 text-pink-400 animate-pulse">_</span>
+            </motion.h1>
+            
+            {/* Rotating taglines */}
+            <div className="h-16 sm:h-12 mb-6">
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={taglineIndex}
+                  className="text-xl sm:text-2xl text-gray-300"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {siteConfig.splash.taglines[taglineIndex]}
+                </motion.p>
+              </AnimatePresence>
+            </div>
+            
+            {/* Bio */}
+            <motion.p 
+              className="text-gray-400 max-w-lg mb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+            >
+              {siteConfig.splash.bio}
+            </motion.p>
+            
+            {/* CTAs */}
+            <motion.div 
+              className="flex flex-wrap gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.6 }}
+            >
+              <Link 
+                href="/projects"
+                className="group relative px-6 py-3 bg-indigo-600 text-white font-medium overflow-hidden"
+              >
+                <span className="relative z-10">{siteConfig.splash.ctaPrimary}</span>
+                <div className="absolute inset-0 bg-indigo-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+              </Link>
+              <Link 
+                href="/about"
+                className="group relative px-6 py-3 border border-indigo-500/50 text-indigo-300 font-medium overflow-hidden"
+              >
+                <span className="relative z-10">{siteConfig.splash.ctaSecondary}</span>
+                <div className="absolute inset-0 bg-indigo-900/50 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+              </Link>
+            </motion.div>
+          </motion.div>
+          
+          {/* Visual element */}
+          <motion.div 
+            className="md:col-span-3 md:col-start-9 relative"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
           >
-            Read our docs
-          </a>
+            {/* Backend-themed visual with Euler Identity */}
+            <div className="relative aspect-square max-w-xs mx-auto">
+              {/* Terminal is now the main visual element */}
+              
+              {/* Interactive Terminal */}
+              <motion.div 
+                className="absolute inset-0 mt-8"
+                initial={{ y: 20 }}
+                animate={{ y: 0 }}
+                transition={{ delay: 0.8, duration: 0.5, type: "spring" }}
+              >
+                <Terminal 
+                  initialMessage="Welcome to Jason's terminal. Type 'help' for available commands."
+                  promptSymbol="$"
+                />
+              </motion.div>
+              
+              {/* Interactive element that follows mouse */}
+              <motion.div 
+                className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                animate={{
+                  x: mousePosition.x / 20 - 10,
+                  y: mousePosition.y / 20 - 10,
+                }}
+                transition={{ type: "spring", stiffness: 150, damping: 15 }}
+              >
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 opacity-40 blur-xl"></div>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Featured Projects Preview */}
+      <section className="py-20 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-block px-3 py-1 text-sm font-mono text-indigo-300 bg-indigo-900/30 mb-3">
+              $ ls -la projects/
+            </div>
+            <h2 className="text-3xl font-bold text-white">Featured Projects</h2>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            {/* Featured project */}
+            <motion.div 
+              className="md:col-span-8 group"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
+              <Link 
+                href="/projects"
+                className="block bg-gray-800 hover:bg-gray-750 transition-colors overflow-hidden"
+              >
+                <div className="h-64 bg-gradient-to-br from-indigo-600 to-purple-700 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <svg className="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  
+                  {/* Code overlay */}
+                  <div className="absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <pre className="text-xs text-indigo-300 p-4 font-mono overflow-hidden">
+                      <code>{`function Portfolio() {
+  return (
+    <div className="awesome">
+      <h1>My Work</h1>
+      <Projects data={projects} />
+    </div>
+  );
+}`}</code>
+                    </pre>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">Portfolio Website</h3>
+                    <span className="text-xs bg-indigo-900/50 text-indigo-300 px-2 py-1">Featured</span>
+                  </div>
+                  <p className="text-gray-400 mb-4">A beautiful, responsive portfolio website built with Next.js and TailwindCSS.</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-2 py-1 text-xs bg-gray-700 text-gray-300">Next.js</span>
+                    <span className="px-2 py-1 text-xs bg-gray-700 text-gray-300">React</span>
+                    <span className="px-2 py-1 text-xs bg-gray-700 text-gray-300">TailwindCSS</span>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+            
+            {/* Second project */}
+            <motion.div 
+              className="md:col-span-4 group"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              <Link 
+                href="/projects"
+                className="block bg-gray-800 hover:bg-gray-750 transition-colors h-full overflow-hidden"
+              >
+                <div className="h-48 bg-gradient-to-br from-purple-600 to-pink-700 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <svg className="w-12 h-12 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                  </div>
+                  
+                  {/* Code overlay */}
+                  <div className="absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <pre className="text-xs text-purple-300 p-4 font-mono overflow-hidden">
+                      <code>{`// E-commerce logic
+const addToCart = (item) => {
+  dispatch({ 
+    type: 'ADD_ITEM',
+    payload: item
+  });
+};`}</code>
+                    </pre>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors mb-2">E-Commerce App</h3>
+                  <p className="text-gray-400 mb-4">A full-featured e-commerce application with product listings, cart, and checkout.</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-2 py-1 text-xs bg-gray-700 text-gray-300">React</span>
+                    <span className="px-2 py-1 text-xs bg-gray-700 text-gray-300">Node.js</span>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          </div>
+          
+          {/* View all link */}
+          <motion.div 
+            className="mt-12 text-right"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+          >
+            <Link 
+              href="/projects"
+              className="inline-flex items-center group"
+            >
+              <span className="font-mono text-indigo-400 mr-2 group-hover:mr-3 transition-all">cd</span>
+              <span className="text-indigo-300 group-hover:text-indigo-200 transition-colors">/projects</span>
+              <span className="text-pink-400 ml-1 group-hover:ml-2 transition-all">~</span>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }

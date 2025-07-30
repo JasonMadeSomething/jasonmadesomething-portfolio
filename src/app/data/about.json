@@ -1,0 +1,72 @@
+{
+  "name": "Jason Teitelman",
+  "title": "Software Developer & Observability Engineer",
+  "bio": "Hi, I'm Jason! I'm a pragmatic developer with a strong background in C#, observability engineering, and modern web development. I’m passionate about building scalable systems and improving software reliability.",
+  "longBio": "With years of hands-on experience across the software development lifecycle, I've contributed to everything from legacy system maintenance to observability pipelines and cloud-based personal projects. My focus has been in enterprise environments where reliability, clarity, and visibility are essential.\n\nMy toolkit includes C#, React.js, PowerShell, and Datadog, but I’m equally comfortable writing automation with Ansible or scripting complex analysis in SQL. I care deeply about system health, developer efficiency, and making complexity manageable.\n\nOutside of code, I explore creative outlets like guitar, poetry, and digital art. I’m currently focused on personal growth and building a life aligned with purpose and integrity.",
+  "skills": [
+    {
+      "category": "Frontend",
+      "technologies": ["React.js", "HTML", "CSS", "JavaScript"]
+    },
+    {
+      "category": "Backend",
+      "technologies": ["C#", "PowerShell", "RESTful APIs"]
+    },
+    {
+      "category": "Database",
+      "technologies": ["SQL", "MongoDB"]
+    },
+    {
+      "category": "DevOps & Monitoring",
+      "technologies": ["Datadog", "Splunk", "Dynatrace", "AWS", "Ansible", "Linux/Unix"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Allstate",
+      "position": "Lead Software Engineer",
+      "period": "Jan 2024 – Present",
+      "description": "Maintained and optimized C# APIs in a large legacy application. Built features with React.js, implemented unit/integration tests, and created observability dashboards with Datadog."
+    },
+    {
+      "company": "Allstate",
+      "position": "Lead Service Engineer",
+      "period": "Nov 2021 – Jan 2024",
+      "description": "Deployed Datadog across Windows/Linux servers using Ansible, developed Splunk dashboards, and improved incident response strategies."
+    },
+    {
+      "company": "Allstate (via Randstad)",
+      "position": "Business Systems Analyst",
+      "period": "Dec 2017 – Oct 2018",
+      "description": "Automated PowerShell data processing workflows, validated enhancements, and troubleshot batch file issues in AL3 and XML."
+    },
+    {
+      "company": "Coverys (via Beacon Hill Technologies)",
+      "position": "Data Quality Analyst",
+      "period": "Feb 2017 – Dec 2017",
+      "description": "Used SQL and Tableau to support reporting integrity, mapped data lineage for governance, and led quality assurance initiatives for EDW-driven reports."
+    },
+    {
+      "company": "Mail Marketing Solutions",
+      "position": "Data Analyst",
+      "period": "Jun 2014 – Dec 2016",
+      "description": "Wrote Ruby and VBA scripts to clean and transform mail data, analyzed USPS error trends, and created automation to improve workflow efficiency."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Eckerd College",
+      "degree": "Bachelor of Arts in Economics, Minor in Mathematics",
+      "period": "2010 – 2014"
+    },
+    {
+      "institution": "Bloc.io",
+      "degree": "Full Stack Web Development Program (Non-Degree)",
+      "period": "Completed 2016"
+    }
+  ],
+  "socialLinks": {
+    "github": "https://github.com/jasonmadesomething",
+    "linkedin": "https://linkedin.com/in/jasonmadesomething"
+  }
+}

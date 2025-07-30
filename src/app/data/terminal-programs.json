@@ -1,0 +1,141 @@
+{
+  "programs": [
+    {
+      "id": "euler.py",
+      "name": "Euler's Identity",
+      "description": "A program demonstrating Euler's Identity: e^(iπ) + 1 = 0",
+      "type": "python",
+      "commands": {
+        "cat": {
+          "output": [
+            "# Euler's Identity",
+            "import numpy as np",
+            "import math",
+            "",
+            "def euler_identity():",
+            "    # Calculate e^(iπ) + 1 = 0",
+            "    # Using Euler's formula: e^(ix) = cos(x) + i*sin(x)",
+            "    # When x = π, cos(π) = -1 and sin(π) = 0",
+            "    # So e^(iπ) = -1, and e^(iπ) + 1 = 0",
+            "    real_part = math.cos(math.pi)  # = -1",
+            "    imag_part = math.sin(math.pi)  # = 0",
+            "    euler_result = complex(real_part, imag_part) + 1",
+            "    return euler_result",
+            "",
+            "euler_result = euler_identity()",
+            "print(f\"e^(iπ) + 1 = {euler_result}\")",
+            "# The result should be 0"
+          ],
+          "isHtml": true,
+          "textClass": "text-purple-400 font-mono"
+        },
+        "run": {
+          "output": [
+            "Running euler.py...",
+            "e^(iπ) + 1 = 0",
+            "Euler's Identity: a relationship between fundamental constants e, i, π, 0, and 1"
+          ],
+          "isHtml": true,
+          "animation": "euler",
+          "textClass": {
+            "default": "text-purple-400",
+            "results": "text-green-400 mt-2",
+            "description": "mt-2 text-gray-400"
+          }
+        }
+      }
+    },
+    {
+      "id": "README.md",
+      "name": "README File",
+      "description": "Portfolio site README file",
+      "type": "markdown",
+      "commands": {
+        "cat": {
+          "output": [
+            "# Portfolio Site",
+            "",
+            "Welcome to my portfolio site repository! This site showcases my projects, skills, and experience as a developer.",
+            "",
+            "## Features",
+            "- Interactive terminal experience",
+            "- Project showcase with filterable tags",
+            "- Dark/light theme toggle",
+            "- Responsive design",
+            "- Modern animations and UI effects",
+            "",
+            "## Tech Stack",
+            "- Next.js",
+            "- TypeScript",
+            "- Tailwind CSS",
+            "- Framer Motion",
+            "",
+            "Feel free to explore the codebase and reach out if you have any questions!"
+          ],
+          "isHtml": true,
+          "textClass": "text-green-300 font-mono"
+        }
+      }
+    },
+    {
+      "id": "hello.js",
+      "name": "Hello World",
+      "description": "A simple JavaScript hello world program",
+      "type": "javascript",
+      "commands": {
+        "cat": {
+          "output": [
+            "// Hello World in JavaScript",
+            "console.log('Hello, World!');",
+            "",
+            "// A more fancy greeting",
+            "function greet(name) {",
+            "  return `Hello, ${name || 'World'}! Welcome to my portfolio.`;",
+            "}",
+            "",
+            "const message = greet();",
+            "console.log(message);"
+          ],
+          "isHtml": true,
+          "textClass": "text-yellow-400 font-mono"
+        },
+        "run": {
+          "output": [
+            "Running hello.js...",
+            "Hello, World!",
+            "Hello, World! Welcome to my portfolio."
+          ],
+          "isHtml": true,
+          "textClass": {
+            "default": "text-yellow-400",
+            "results": "text-green-400 mt-2"
+          }
+        }
+      }
+    }
+  ],
+  "commands": {
+    "help": {
+      "output": [
+        "Available commands:",
+        "ls - List directory contents",
+        "cd [directory] - Change directory or view project",
+        "cat [filename] - Display file contents",
+        "run [filename] - Execute a file",
+        "clear - Clear terminal",
+        "help - Show this help message",
+        "",
+        "Hint: Try cd into a project directory to learn more..."
+      ],
+      "isHtml": false
+    },
+    "clear": {
+      "output": [],
+      "isHtml": false
+    },
+    "default": {
+      "output": ["Command not found. Type 'help' for available commands."],
+      "isHtml": false
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .formula {
+      font-family: 'Times New Roman', serif;
+      font-size: 40px;
+      fill: #8b5cf6;
+      opacity: 0.8;
+    }
+    .exponent {
+      font-size: 24px;
+    }
+    .plus {
+      font-size: 40px;
+    }
+    .equals {
+      font-size: 40px;
+    }
+    .zero {
+      font-size: 40px;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 0.9; }
+      100% { opacity: 0.6; }
+    }
+    .animate {
+      animation: pulse 8s infinite;
+    }
+  </style>
+  <g class="animate">
+    <text x="20" y="60" class="formula">e<tspan class="exponent" dy="-20">iπ</tspan><tspan dy="20" class="plus"> + 1</tspan> <tspan class="equals">=</tspan> <tspan class="zero">0</tspan></text>
+  </g>
+</svg>
