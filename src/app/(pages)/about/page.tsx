@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { siteConfig } from "../../data/config";
 
 interface Skill {
   category: string;

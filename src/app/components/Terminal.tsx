@@ -13,17 +13,6 @@ interface CommandResponse {
   animation?: string;
 }
 
-interface ProgramOutput {
-  output: string[] | string;
-  isHtml?: boolean;
-  animation?: string;
-  textClass?: string | {
-    default?: string;
-    results?: string;
-    description?: string;
-  };
-}
-
 interface TerminalConfig {
   [key: string]: CommandResponse;
 }

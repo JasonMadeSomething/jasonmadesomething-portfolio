@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { siteConfig } from "../../data/config";
 
 interface Skill {
   category: string;
@@ -26,7 +25,7 @@ interface Education {
 interface SocialLinks {
   github: string;
   linkedin: string;
-  twitter: string;
+  twitter?: string;
 }
 
 interface AboutData {
@@ -107,7 +106,13 @@ export default function AboutPage() {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative bg-gray-900">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-5">
-        <img src="/images/grid.svg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <Image 
+          src="/images/grid.svg" 
+          alt="Background grid" 
+          fill 
+          className="object-cover" 
+          priority={false}
+        />
       </div>
       
       <motion.div 

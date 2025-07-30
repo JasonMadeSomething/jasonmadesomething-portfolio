@@ -1,27 +1,23 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import Image from "next/image";
 import { siteConfig } from "../data/config";
 
 export default function Footer() {
-  // Force re-render on theme change by using useEffect
-  const [mounted, setMounted] = React.useState(false);
-  
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+  // No need for mounted state as we're not conditionally rendering based on it
   
   return (
     <footer className="bg-white dark:bg-gray-900 border-t border-gray-200/50 dark:border-gray-800/50 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Euler Identity Easter Egg */}
-        <div className="absolute right-8 opacity-10 pointer-events-none">
-          <img 
+        <div className="absolute right-8 opacity-10 pointer-events-none relative w-32 h-32">
+          <Image 
             src="/images/euler-identity.svg" 
             alt="Euler's Identity" 
-            className="w-32 h-auto"
+            fill
+            className="object-contain"
           />
         </div>
         

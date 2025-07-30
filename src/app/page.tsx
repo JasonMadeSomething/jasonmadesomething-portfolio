@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "./data/config";
@@ -21,7 +20,7 @@ interface Project {
 }
 
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  // State for UI elements
   const [taglineIndex, setTaglineIndex] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
@@ -40,8 +39,6 @@ export default function Home() {
   
   // Rotate through taglines and load featured projects
   useEffect(() => {
-    setIsLoaded(true);
-    
     // Load featured projects from projects.json
     const featured = (projectsData as { projects: Project[] }).projects.filter(project => project.featured);
     setFeaturedProjects(featured);
