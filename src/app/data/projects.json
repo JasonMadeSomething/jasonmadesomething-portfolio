@@ -3,41 +3,21 @@
     {
       "id": "portfolio-site",
       "title": "Portfolio Website",
-      "description": "A beautiful, responsive portfolio website built with Next.js and TailwindCSS.",
+      "description": "A portfolio website built with Next.js and TailwindCSS.",
       "image": "/images/projects/portfolio.jpg",
       "tags": ["Next.js", "React", "TailwindCSS", "TypeScript"],
-      "link": "https://github.com/username/portfolio",
-      "demoLink": "https://portfolio.example.com",
+      "link": "https://github.com/JasonMadeSomething/jasonmadesomething-portfolio",
+      "demoLink": "https://www.made-something.com",
       "featured": true
     },
     {
-      "id": "e-commerce-app",
-      "title": "E-Commerce Application",
-      "description": "A full-featured e-commerce application with product listings, cart functionality, and checkout process.",
-      "image": "/images/projects/ecommerce.jpg",
+      "id": "Placeholder",
+      "title": "Placeholder",
+      "description": "A placeholder project.",
+      "image": "/images/projects/placeholder.jpg",
       "tags": ["React", "Node.js", "MongoDB", "Express"],
-      "link": "https://github.com/username/ecommerce",
-      "demoLink": "https://ecommerce.example.com",
-      "featured": true
-    },
-    {
-      "id": "weather-app",
-      "title": "Weather Dashboard",
-      "description": "A weather dashboard that shows current weather and forecasts for multiple locations.",
-      "image": "/images/projects/weather.jpg",
-      "tags": ["JavaScript", "API", "CSS"],
-      "link": "https://github.com/username/weather-app",
-      "demoLink": "https://weather.example.com",
-      "featured": false
-    },
-    {
-      "id": "task-manager",
-      "title": "Task Manager",
-      "description": "A task management application with drag-and-drop functionality and user authentication.",
-      "image": "/images/projects/taskmanager.jpg",
-      "tags": ["React", "Firebase", "CSS"],
-      "link": "https://github.com/username/task-manager",
-      "demoLink": "https://tasks.example.com",
+      "link": "",
+      "demoLink": "",
       "featured": false
     }
   ]
