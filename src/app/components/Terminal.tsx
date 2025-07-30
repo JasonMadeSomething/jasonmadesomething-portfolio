@@ -81,19 +81,10 @@ const Terminal: React.FC<TerminalProps> = ({
   const terminalRef = useRef<HTMLDivElement>(null);
   
   // Convert terminal programs from JSON to a Record for easier lookup
-  interface TerminalProgram {
-    id: string;
-    name: string;
-    description: string;
-    type: string;
-    commands: {
-      [key: string]: ProgramOutput;
-    };
-  }
-  
-  const programs: Record<string, TerminalProgram> = {};
-  terminalProgramsData.programs.forEach((program: any) => {
-    programs[program.id] = program as TerminalProgram;
+  // Use a type assertion to avoid TypeScript errors with the JSON structure
+  const programs: Record<string, any> = {};
+  terminalProgramsData.programs.forEach((program) => {
+    programs[program.id] = program;
   });
 
   // Base terminal commands (help, ls, clear, etc.)
