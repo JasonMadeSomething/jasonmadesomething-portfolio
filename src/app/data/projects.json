@@ -1,24 +1,34 @@
 {
-  "projects": [
-    {
-      "id": "portfolio-site",
-      "title": "Portfolio Website",
-      "description": "A portfolio website built with Next.js and TailwindCSS.",
-      "image": "/images/projects/portfolio.jpg",
-      "tags": ["Next.js", "React", "TailwindCSS", "TypeScript"],
-      "link": "https://github.com/JasonMadeSomething/jasonmadesomething-portfolio",
-      "demoLink": "https://www.made-something.com",
-      "featured": true
-    },
-    {
-      "id": "semantic-authenticator",
-      "title": "Semantic Authenticator",
-      "description": "An experiment in embedding semantic AI into authentication.",
-      "image": "/images/projects/placeholder.jpg",
-      "tags": ["React", "Semantic AI", "Authentication", "OpenAI"],
-      "link": "https://github.com/JasonMadeSomething/semanticAuth",
-      "demoLink": "semantic.madesomething.com",
-      "featured": false
-    }
-  ]
+	"projects": [
+		{
+			"id": "portfolio-site",
+			"title": "Portfolio Website",
+			"description": "A portfolio website built with Next.js and TailwindCSS.",
+			"image": "/images/projects/portfolio.jpg",
+			"tags": [
+				"Next.js",
+				"React",
+				"TailwindCSS",
+				"TypeScript"
+			],
+			"link": "https://github.com/JasonMadeSomething/jasonmadesomething-portfolio",
+			"demoLink": "https://www.made-something.com",
+			"featured": true
+		},
+		{
+			"id": "semantic-auth",
+			"title": "Semantic Authenticator",
+			"description": "An experiment in embedding semantic AI into authentication.",
+			"image": "/images/projects/placeholder.jpg",
+			"tags": [
+				"React",
+				"Semantic AI",
+				"Authentication",
+				"OpenAI"
+			],
+			"link": "https://github.com/JasonMadeSomething/semanticAuth",
+			"demoLink": "https://semantic.made-something.com",
+			"featured": false
+		}
+	]
 }

@@ -261,8 +261,10 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + (index * 0.2), duration: 0.6 }}
                 >
-                  <Link 
-                    href={`/projects?id=${project.id}`}
+                  <a 
+                    href={project.demoLink || `/projects?id=${project.id}`}
+                    target={project.demoLink ? "_blank" : "_self"}
+                    rel={project.demoLink ? "noopener noreferrer" : ""}
                     className="block bg-gray-800 hover:bg-gray-750 transition-colors overflow-hidden h-full"
                   >
                     <div className={`${index === 0 ? 'h-64' : 'h-48'} bg-gradient-to-br from-indigo-600 to-purple-700 relative overflow-hidden`}>
@@ -292,7 +294,7 @@ export default function Home() {
                         ))}
                       </div>
                     </div>
-                  </Link>
+                  </a>
                 </motion.div>
               ))
             ) : (

@@ -2,10 +2,8 @@
 
 import { useState, useEffect, Suspense } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { siteConfig } from "../../data/config";
 
 interface Project {
   id: string;
@@ -26,7 +24,6 @@ function ProjectsContent() {
   const [isLoaded, setIsLoaded] = useState(false);
   
   const searchParams = useSearchParams();
-  const router = useRouter();
   
   // Load projects data
   useEffect(() => {
@@ -101,7 +98,7 @@ function ProjectsContent() {
   // Animation variants for staggered animations
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
+    show: {
       opacity: 1,
       transition: {
         staggerChildren: 0.1
@@ -111,7 +108,7 @@ function ProjectsContent() {
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: {
+    show: {
       y: 0,
       opacity: 1,
       transition: {
@@ -126,13 +123,13 @@ function ProjectsContent() {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-5">
-        <img src="/images/grid.svg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <Image src="/images/grid.svg" alt="" className="absolute inset-0 w-full h-full object-cover" />
       </div>
       
       <motion.div 
         className={`relative z-10 transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
         initial="hidden"
-        animate={isLoaded ? "visible" : "hidden"}
+        animate={isLoaded ? "show" : "hidden"}
         variants={containerVariants}>
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">My Projects</h1>
@@ -191,10 +188,11 @@ function ProjectsContent() {
                   </div>
                 ) : (
                   <Image 
-                    src={project.image} 
+                    src={project.image || "/images/projects/placeholder.jpg"}
                     alt={project.title}
-                    fill
-                    className="object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    width={400}
+                    height={300}
                   />
                 )}
               </div>
