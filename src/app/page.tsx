@@ -6,12 +6,26 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "./data/config";
 import Terminal from "./components/Terminal";
+import projectsData from "./data/projects.json";
+
+// Define the Project interface to match the structure in projects.json
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  link: string;
+  demoLink: string;
+  featured: boolean;
+}
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [taglineIndex, setTaglineIndex] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
+  const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
   
   // Handle mouse movement for interactive elements
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -24,9 +38,13 @@ export default function Home() {
     }
   };
   
-  // Rotate through taglines
+  // Rotate through taglines and load featured projects
   useEffect(() => {
     setIsLoaded(true);
+    
+    // Load featured projects from projects.json
+    const featured = (projectsData as { projects: Project[] }).projects.filter(project => project.featured);
+    setFeaturedProjects(featured);
     
     const interval = setInterval(() => {
       setTaglineIndex((prev) => 
@@ -237,94 +255,54 @@ export default function Home() {
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            {/* Featured project */}
-            <motion.div 
-              className="md:col-span-8 group"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              <Link 
-                href="/projects"
-                className="block bg-gray-800 hover:bg-gray-750 transition-colors overflow-hidden"
-              >
-                <div className="h-64 bg-gradient-to-br from-indigo-600 to-purple-700 relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <svg className="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  
-                  {/* Code overlay */}
-                  <div className="absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <pre className="text-xs text-indigo-300 p-4 font-mono overflow-hidden">
-                      <code>{`function Portfolio() {
-  return (
-    <div className="awesome">
-      <h1>My Work</h1>
-      <Projects data={projects} />
-    </div>
-  );
-}`}</code>
-                    </pre>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">Portfolio Website</h3>
-                    <span className="text-xs bg-indigo-900/50 text-indigo-300 px-2 py-1">Featured</span>
-                  </div>
-                  <p className="text-gray-400 mb-4">A beautiful, responsive portfolio website built with Next.js and TailwindCSS.</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 text-xs bg-gray-700 text-gray-300">Next.js</span>
-                    <span className="px-2 py-1 text-xs bg-gray-700 text-gray-300">React</span>
-                    <span className="px-2 py-1 text-xs bg-gray-700 text-gray-300">TailwindCSS</span>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-            
-            {/* Second project */}
-            <motion.div 
-              className="md:col-span-4 group"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-            >
-              <Link 
-                href="/projects"
-                className="block bg-gray-800 hover:bg-gray-750 transition-colors h-full overflow-hidden"
-              >
-                <div className="h-48 bg-gradient-to-br from-purple-600 to-pink-700 relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <svg className="w-12 h-12 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
-                  </div>
-                  
-                  {/* Code overlay */}
-                  <div className="absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <pre className="text-xs text-purple-300 p-4 font-mono overflow-hidden">
-                      <code>{`// E-commerce logic
-const addToCart = (item) => {
-  dispatch({ 
-    type: 'ADD_ITEM',
-    payload: item
-  });
-};`}</code>
-                    </pre>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors mb-2">E-Commerce App</h3>
-                  <p className="text-gray-400 mb-4">A full-featured e-commerce application with product listings, cart, and checkout.</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 text-xs bg-gray-700 text-gray-300">React</span>
-                    <span className="px-2 py-1 text-xs bg-gray-700 text-gray-300">Node.js</span>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
+            {featuredProjects.length > 0 ? (
+              featuredProjects.map((project, index) => (
+                <motion.div 
+                  key={project.id}
+                  className={`${index === 0 ? 'md:col-span-8' : 'md:col-span-4'} group`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 + (index * 0.2), duration: 0.6 }}
+                >
+                  <Link 
+                    href={`/projects?id=${project.id}`}
+                    className="block bg-gray-800 hover:bg-gray-750 transition-colors overflow-hidden h-full"
+                  >
+                    <div className={`${index === 0 ? 'h-64' : 'h-48'} bg-gradient-to-br from-indigo-600 to-purple-700 relative overflow-hidden`}>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <svg className={`${index === 0 ? 'w-16 h-16' : 'w-12 h-12'} text-white/80`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      
+                      {/* Code overlay */}
+                      <div className="absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <pre className="text-xs text-indigo-300 p-4 font-mono overflow-hidden">
+                          <code>{`// ${project.title}
+// ${project.tags.join(', ')}`}</code>
+                        </pre>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">{project.title}</h3>
+                        <span className="text-xs bg-indigo-900/50 text-indigo-300 px-2 py-1">Featured</span>
+                      </div>
+                      <p className="text-gray-400 mb-4">{project.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.slice(0, 3).map((tag, tagIndex) => (
+                          <span key={tagIndex} className="px-2 py-1 text-xs bg-gray-700 text-gray-300">{tag}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))
+            ) : (
+              <div className="col-span-12 text-center py-12">
+                <p className="text-gray-400">No featured projects found.</p>
+              </div>
+            )}
           </div>
           
           {/* View all link */}
