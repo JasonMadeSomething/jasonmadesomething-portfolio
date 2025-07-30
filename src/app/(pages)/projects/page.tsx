@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -18,7 +18,8 @@ interface Project {
   featured: boolean;
 }
 
-export default function ProjectsPage() {
+// Component that uses searchParams needs to be wrapped in Suspense
+function ProjectsContent() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [allTags, setAllTags] = useState<string[]>([]);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -264,5 +265,14 @@ export default function ProjectsPage() {
         )}
       </motion.div>
     </div>
+  );
+}
+
+// Main page component with Suspense boundary
+export default function ProjectsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading projects...</div>}>
+      <ProjectsContent />
+    </Suspense>
   );
 }
