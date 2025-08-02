@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "./data/config";
 import Terminal from "./components/Terminal";
@@ -268,11 +269,21 @@ export default function Home() {
                     className="block bg-gray-800 hover:bg-gray-750 transition-colors overflow-hidden h-full"
                   >
                     <div className={`${index === 0 ? 'h-64' : 'h-48'} bg-gradient-to-br from-indigo-600 to-purple-700 relative overflow-hidden`}>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <svg className={`${index === 0 ? 'w-16 h-16' : 'w-12 h-12'} text-white/80`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </div>
+                      {project.image ? (
+                        <Image 
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                          width={800}
+                          height={index === 0 ? 400 : 300}
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <svg className={`${index === 0 ? 'w-16 h-16' : 'w-12 h-12'} text-white/80`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                      )}
                       
                       {/* Code overlay */}
                       <div className="absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-100 transition-opacity">
