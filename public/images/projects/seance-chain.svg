@@ -1,0 +1,205 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with dark haunted arcade theme -->
+  <rect width="800" height="600" fill="#0a0a14" />
+  
+  <!-- Arcade cabinet outline -->
+  <g transform="translate(400, 300)">
+    <!-- Cabinet body -->
+    <path d="M-200,-250 L-200,200 L-150,250 L150,250 L200,200 L200,-250 Z" fill="#1a1a2e" stroke="#6d28d9" stroke-width="4" />
+    
+    <!-- Screen area -->
+    <rect x="-180" y="-230" width="360" height="280" rx="10" fill="#000000" stroke="#6d28d9" stroke-width="2" />
+    
+    <!-- Control panel -->
+    <path d="M-180,70 L-180,170 L-150,200 L150,200 L180,170 L180,70 Z" fill="#1a1a2e" stroke="#6d28d9" stroke-width="2" />
+    
+    <!-- Joystick -->
+    <circle cx="-100" cy="135" r="25" fill="#2d2d44" stroke="#6d28d9" stroke-width="2" />
+    <circle cx="-100" cy="135" r="10" fill="#6d28d9" />
+    <line x1="-100" y1="135" x2="-90" y2="120" stroke="#6d28d9" stroke-width="8" stroke-linecap="round" />
+    
+    <!-- Buttons -->
+    <circle cx="60" cy="120" r="15" fill="#ff5555" stroke="#6d28d9" stroke-width="2" />
+    <circle cx="100" cy="120" r="15" fill="#5555ff" stroke="#6d28d9" stroke-width="2" />
+    <circle cx="140" cy="120" r="15" fill="#55ff55" stroke="#6d28d9" stroke-width="2" />
+    <circle cx="80" cy="150" r="15" fill="#ffff55" stroke="#6d28d9" stroke-width="2" />
+    <circle cx="120" cy="150" r="15" fill="#ff55ff" stroke="#6d28d9" stroke-width="2" />
+  </g>
+  
+  <!-- Ghostly chain connecting blocks -->
+  <g opacity="0.8">
+    <!-- Blockchain visualization -->
+    <g transform="translate(400, 300)">
+      <!-- Block 1 -->
+      <g transform="translate(-250, -150)">
+        <rect x="-40" y="-30" width="80" height="60" rx="5" fill="#2d2d44" stroke="#6d28d9" stroke-width="2" />
+        <text x="0" y="0" font-family="monospace" font-size="10" fill="#a78bfa" text-anchor="middle">BLOCK #1</text>
+        <text x="0" y="15" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle">0x7f3a...</text>
+      </g>
+      
+      <!-- Block 2 -->
+      <g transform="translate(-100, -150)">
+        <rect x="-40" y="-30" width="80" height="60" rx="5" fill="#2d2d44" stroke="#6d28d9" stroke-width="2" />
+        <text x="0" y="0" font-family="monospace" font-size="10" fill="#a78bfa" text-anchor="middle">BLOCK #2</text>
+        <text x="0" y="15" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle">0x8e2b...</text>
+      </g>
+      
+      <!-- Block 3 -->
+      <g transform="translate(50, -150)">
+        <rect x="-40" y="-30" width="80" height="60" rx="5" fill="#2d2d44" stroke="#6d28d9" stroke-width="2" />
+        <text x="0" y="0" font-family="monospace" font-size="10" fill="#a78bfa" text-anchor="middle">BLOCK #3</text>
+        <text x="0" y="15" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle">0x9c4d...</text>
+      </g>
+      
+      <!-- Block 4 -->
+      <g transform="translate(200, -150)">
+        <rect x="-40" y="-30" width="80" height="60" rx="5" fill="#2d2d44" stroke="#6d28d9" stroke-width="2" />
+        <text x="0" y="0" font-family="monospace" font-size="10" fill="#a78bfa" text-anchor="middle">BLOCK #4</text>
+        <text x="0" y="15" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle">0xa5f7...</text>
+      </g>
+      
+      <!-- Ghostly chains connecting blocks -->
+      <g stroke="#a78bfa" stroke-width="3" stroke-dasharray="10,5" opacity="0.6">
+        <path d="M-210,-150 L-140,-150" />
+        <path d="M-60,-150 L10,-150" />
+        <path d="M90,-150 L160,-150" />
+      </g>
+    </g>
+  </g>
+  
+  <!-- Ghostly apparitions -->
+  <g opacity="0.7">
+    <!-- Ghost 1 -->
+    <g transform="translate(200, 100)">
+      <path d="M0,0 C-20,-20 -40,0 -30,20 C-40,30 -30,40 -10,30 C0,40 10,40 20,30 C40,40 50,30 40,20 C50,0 30,-20 0,0 Z" 
+            fill="#a78bfa" opacity="0.5" />
+      <circle cx="-15" cy="10" r="5" fill="#ffffff" />
+      <circle cx="15" cy="10" r="5" fill="#ffffff" />
+      <path d="M-10,20 C-5,25 5,25 10,20" stroke="#ffffff" stroke-width="2" fill="none" />
+    </g>
+    
+    <!-- Ghost 2 -->
+    <g transform="translate(600, 150)">
+      <path d="M0,0 C-20,-20 -40,0 -30,20 C-40,30 -30,40 -10,30 C0,40 10,40 20,30 C40,40 50,30 40,20 C50,0 30,-20 0,0 Z" 
+            fill="#a78bfa" opacity="0.5" />
+      <circle cx="-15" cy="10" r="5" fill="#ffffff" />
+      <circle cx="15" cy="10" r="5" fill="#ffffff" />
+      <path d="M-10,25 C0,15 10,25 10,20" stroke="#ffffff" stroke-width="2" fill="none" />
+    </g>
+  </g>
+  
+  <!-- NFT message cards with ghostly glow -->
+  <g transform="translate(400, 0)">
+    <!-- NFT Card 1 -->
+    <g transform="translate(-150, 100) rotate(-15)">
+      <rect x="-40" y="-60" width="80" height="120" rx="5" fill="#2d2d44" stroke="#6d28d9" stroke-width="2" />
+      <text x="0" y="-40" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle">NFT #1</text>
+      <text x="0" y="-25" font-family="monospace" font-size="6" fill="#a78bfa" text-anchor="middle">FROM THE OTHER SIDE</text>
+      <rect x="-30" y="-15" width="60" height="60" fill="#1a1a2e" stroke="#6d28d9" stroke-width="1" />
+      <text x="0" y="10" font-family="serif" font-size="8" fill="#ffffff" text-anchor="middle" font-style="italic">Message</text>
+      <text x="0" y="20" font-family="serif" font-size="8" fill="#ffffff" text-anchor="middle" font-style="italic">from</text>
+      <text x="0" y="30" font-family="serif" font-size="8" fill="#ffffff" text-anchor="middle" font-style="italic">beyond</text>
+    </g>
+    
+    <!-- NFT Card 2 -->
+    <g transform="translate(150, 100) rotate(15)">
+      <rect x="-40" y="-60" width="80" height="120" rx="5" fill="#2d2d44" stroke="#6d28d9" stroke-width="2" />
+      <text x="0" y="-40" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle">NFT #2</text>
+      <text x="0" y="-25" font-family="monospace" font-size="6" fill="#a78bfa" text-anchor="middle">ETHEREAL WHISPERS</text>
+      <rect x="-30" y="-15" width="60" height="60" fill="#1a1a2e" stroke="#6d28d9" stroke-width="1" />
+      <text x="0" y="10" font-family="serif" font-size="8" fill="#ffffff" text-anchor="middle" font-style="italic">Spirits</text>
+      <text x="0" y="20" font-family="serif" font-size="8" fill="#ffffff" text-anchor="middle" font-style="italic">speak</text>
+      <text x="0" y="30" font-family="serif" font-size="8" fill="#ffffff" text-anchor="middle" font-style="italic">truths</text>
+    </g>
+  </g>
+  
+  <!-- Arcade screen content -->
+  <g transform="translate(400, 170)">
+    <!-- Screen glow -->
+    <rect x="-180" y="-100" width="360" height="200" rx="10" fill="url(#screenGlow)" />
+    <defs>
+      <radialGradient id="screenGlow" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+        <stop offset="0%" stop-color="#6d28d9" stop-opacity="0.2" />
+        <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+    
+    <!-- Seance text -->
+    <text x="0" y="0" font-family="Impact, fantasy" font-size="48" fill="#ffffff" text-anchor="middle" stroke="#6d28d9" stroke-width="2">SEANCE CHAIN</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="30" font-family="monospace" font-size="16" fill="#a78bfa" text-anchor="middle">SUMMON MESSAGES TOGETHER</text>
+    
+    <!-- Pixel ghost logo -->
+    <g transform="translate(0, -50)">
+      <path d="M-30,-20 L30,-20 L30,10 L20,10 L20,20 L10,20 L10,10 L-10,10 L-10,20 L-20,20 L-20,10 L-30,10 Z" fill="#6d28d9" />
+      <rect x="-20" y="-10" width="10" height="10" fill="#000000" />
+      <rect x="10" y="-10" width="10" height="10" fill="#000000" />
+      <path d="M-10,0 L0,0 L10,0" stroke="#000000" stroke-width="3" />
+    </g>
+  </g>
+  
+  <!-- Smart contract code snippets -->
+  <g transform="translate(150, 450)" opacity="0.7">
+    <rect x="-100" y="-30" width="200" height="60" fill="#1a1a2e" stroke="#6d28d9" stroke-width="1" rx="5" />
+    <text font-family="monospace" font-size="10" fill="#a78bfa">
+      <tspan x="-90" y="-15">contract SeanceChain {</tspan>
+      <tspan x="-90" y="0">  function summonMessage(</tspan>
+      <tspan x="-90" y="15">    bytes32 _messageHash</tspan>
+      <tspan x="-90" y="30">  ) external {</tspan>
+    </text>
+  </g>
+  
+  <g transform="translate(650, 450)" opacity="0.7">
+    <rect x="-100" y="-30" width="200" height="60" fill="#1a1a2e" stroke="#6d28d9" stroke-width="1" rx="5" />
+    <text font-family="monospace" font-size="10" fill="#a78bfa">
+      <tspan x="-90" y="-15">function mintNFT(</tspan>
+      <tspan x="-90" y="0">  uint256 _messageId,</tspan>
+      <tspan x="-90" y="15">  address _to</tspan>
+      <tspan x="-90" y="30">) external {</tspan>
+    </text>
+  </g>
+  
+  <!-- Ethereal particles -->
+  <g fill="#a78bfa" opacity="0.5">
+    <circle cx="100" cy="100" r="2" />
+    <circle cx="200" cy="150" r="1" />
+    <circle cx="300" cy="200" r="3" />
+    <circle cx="400" cy="100" r="1" />
+    <circle cx="500" cy="250" r="2" />
+    <circle cx="600" cy="300" r="1" />
+    <circle cx="700" cy="150" r="3" />
+    <circle cx="150" cy="350" r="2" />
+    <circle cx="250" cy="450" r="1" />
+    <circle cx="350" cy="500" r="2" />
+    <circle cx="450" cy="400" r="1" />
+    <circle cx="550" cy="350" r="3" />
+    <circle cx="650" cy="450" r="2" />
+    <circle cx="750" cy="500" r="1" />
+  </g>
+  
+  <!-- Arcade cabinet decorative elements -->
+  <g transform="translate(400, 300)">
+    <!-- Cabinet name -->
+    <text x="0" y="-270" font-family="Impact, fantasy" font-size="24" fill="#ff55ff" text-anchor="middle" stroke="#6d28d9" stroke-width="1">SEANCE CHAIN</text>
+    
+    <!-- Decorative lights -->
+    <g>
+      <circle cx="-190" y="-260" r="5" fill="#ff5555" />
+      <circle cx="-170" y="-260" r="5" fill="#ffff55" />
+      <circle cx="-150" y="-260" r="5" fill="#55ff55" />
+      <circle cx="-130" y="-260" r="5" fill="#5555ff" />
+      <circle cx="-110" y="-260" r="5" fill="#ff55ff" />
+      
+      <circle cx="110" y="-260" r="5" fill="#ff55ff" />
+      <circle cx="130" y="-260" r="5" fill="#5555ff" />
+      <circle cx="150" y="-260" r="5" fill="#55ff55" />
+      <circle cx="170" y="-260" r="5" fill="#ffff55" />
+      <circle cx="190" y="-260" r="5" fill="#ff5555" />
+    </g>
+    
+    <!-- Insert coin slot -->
+    <rect x="150" y="170" width="20" height="5" rx="2" fill="#a78bfa" />
+    <text x="160" y="185" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle">INSERT ETH</text>
+  </g>
+</svg>

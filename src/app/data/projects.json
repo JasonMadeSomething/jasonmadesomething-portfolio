@@ -38,6 +38,23 @@
 			"tags": ["Next.js", "AWS Lambda", "Python", "PostgreSQL", "Rekognition", "Personal Project"],
 			"link": "https://github.com/jasonmadesomething/claimvision",
 			"featured": true
-		  }
+		},
+		{
+			"id": "seance-chain",
+			"title": "Seance Chain",
+			"description": "A blockchain-based collaborative messaging platform where users can 'summon' messages together and mint them as NFTs. Features gas-optimized smart contracts, comprehensive testing, and a haunted arcade UI theme.",
+			"image": "/images/projects/seance-chain.svg",
+			"tags": [
+			  "Solidity",
+			  "NextJS",
+			  "TypeScript",
+			  "Hardhat",
+			  "Smart Contracts",
+			  "NFTs",
+			  "Web3"
+			],
+			"link": "https://github.com/JasonMadeSomething/seance-chain",
+			"featured": false
+		}
 	]
 }
