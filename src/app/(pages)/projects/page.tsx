@@ -12,7 +12,7 @@ interface Project {
   image: string;
   tags: string[];
   link: string;
-  demoLink: string;
+  demoLink?: string;
   featured: boolean;
 }
 
