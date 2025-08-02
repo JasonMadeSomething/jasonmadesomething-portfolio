@@ -29,6 +29,14 @@
 			"link": "https://github.com/JasonMadeSomething/semanticAuth",
 			"demoLink": "https://semantic.made-something.com",
 			"featured": false
-		}
+		},
+		{
+			"id": "claim-vision",
+			"title": "ClaimVision",
+			"description": "Flood damage claim management platform born from necessity. After my house flooded, I built the photo organization and documentation tool I wish I'd had. Features AI-powered analysis, drag-and-drop organization, and automated reporting.",
+			"tags": ["Next.js", "AWS Lambda", "Python", "PostgreSQL", "Rekognition", "Personal Project"],
+			"link": "https://github.com/jasonmadesomething/claimvision",
+			"featured": true
+		  }
 	]
 }
