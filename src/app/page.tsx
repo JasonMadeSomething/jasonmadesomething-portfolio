@@ -12,7 +12,7 @@ interface Project {
   id: string;
   title: string;
   description: string;
-  image: string;
+  image?: string;
   tags: string[];
   link: string;
   demoLink?: string;
