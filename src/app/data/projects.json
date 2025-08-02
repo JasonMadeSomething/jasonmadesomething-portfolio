@@ -4,7 +4,7 @@
 			"id": "portfolio-site",
 			"title": "Portfolio Website",
 			"description": "A portfolio website built with Next.js and TailwindCSS.",
-			"image": "/images/projects/portfolio.jpg",
+			"image": "/images/projects/portfolio-site.svg",
 			"tags": [
 				"Next.js",
 				"React",
@@ -19,7 +19,7 @@
 			"id": "semantic-auth",
 			"title": "Semantic Authenticator",
 			"description": "An experiment in embedding semantic AI into authentication.",
-			"image": "/images/projects/placeholder.jpg",
+			"image": "/images/projects/semantic-auth.svg",
 			"tags": [
 				"React",
 				"Semantic AI",
@@ -34,6 +34,7 @@
 			"id": "claim-vision",
 			"title": "ClaimVision",
 			"description": "Flood damage claim management platform born from necessity. After my house flooded, I built the photo organization and documentation tool I wish I'd had. Features AI-powered analysis, drag-and-drop organization, and automated reporting.",
+			"image": "/images/projects/claimvision.svg",
 			"tags": ["Next.js", "AWS Lambda", "Python", "PostgreSQL", "Rekognition", "Personal Project"],
 			"link": "https://github.com/jasonmadesomething/claimvision",
 			"featured": true

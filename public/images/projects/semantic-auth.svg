@@ -1,0 +1,136 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#18181b" />
+  
+  <!-- Grid pattern for tech feel -->
+  <g stroke="#ffffff10" stroke-width="1">
+    <g id="vertical-lines">
+      <line x1="100" y1="0" x2="100" y2="600" />
+      <line x1="200" y1="0" x2="200" y2="600" />
+      <line x1="300" y1="0" x2="300" y2="600" />
+      <line x1="400" y1="0" x2="400" y2="600" />
+      <line x1="500" y1="0" x2="500" y2="600" />
+      <line x1="600" y1="0" x2="600" y2="600" />
+      <line x1="700" y1="0" x2="700" y2="600" />
+    </g>
+    <g id="horizontal-lines">
+      <line x1="0" y1="100" x2="800" y2="100" />
+      <line x1="0" y1="200" x2="800" y2="200" />
+      <line x1="0" y1="300" x2="800" y2="300" />
+      <line x1="0" y1="400" x2="800" y2="400" />
+      <line x1="0" y1="500" x2="800" y2="500" />
+    </g>
+  </g>
+  
+  <!-- Neural network visualization -->
+  <g transform="translate(400, 300)">
+    <!-- Layer 1 -->
+    <g transform="translate(-200, 0)">
+      <circle cx="0" cy="-80" r="15" fill="#a855f7" />
+      <circle cx="0" cy="-40" r="15" fill="#a855f7" />
+      <circle cx="0" cy="0" r="15" fill="#a855f7" />
+      <circle cx="0" cy="40" r="15" fill="#a855f7" />
+      <circle cx="0" cy="80" r="15" fill="#a855f7" />
+    </g>
+    
+    <!-- Layer 2 -->
+    <g transform="translate(0, 0)">
+      <circle cx="0" cy="-60" r="15" fill="#8b5cf6" />
+      <circle cx="0" cy="-20" r="15" fill="#8b5cf6" />
+      <circle cx="0" cy="20" r="15" fill="#8b5cf6" />
+      <circle cx="0" cy="60" r="15" fill="#8b5cf6" />
+    </g>
+    
+    <!-- Layer 3 -->
+    <g transform="translate(200, 0)">
+      <circle cx="0" cy="-40" r="15" fill="#6366f1" />
+      <circle cx="0" cy="0" r="15" fill="#6366f1" />
+      <circle cx="0" cy="40" r="15" fill="#6366f1" />
+    </g>
+    
+    <!-- Connections -->
+    <g stroke="#ffffff30" stroke-width="1">
+      <!-- Connect Layer 1 to Layer 2 -->
+      <line x1="-185" y1="-80" x2="-15" y2="-60" />
+      <line x1="-185" y1="-80" x2="-15" y2="-20" />
+      <line x1="-185" y1="-80" x2="-15" y2="20" />
+      <line x1="-185" y1="-80" x2="-15" y2="60" />
+      
+      <line x1="-185" y1="-40" x2="-15" y2="-60" />
+      <line x1="-185" y1="-40" x2="-15" y2="-20" />
+      <line x1="-185" y1="-40" x2="-15" y2="20" />
+      <line x1="-185" y1="-40" x2="-15" y2="60" />
+      
+      <line x1="-185" y1="0" x2="-15" y2="-60" />
+      <line x1="-185" y1="0" x2="-15" y2="-20" />
+      <line x1="-185" y1="0" x2="-15" y2="20" />
+      <line x1="-185" y1="0" x2="-15" y2="60" />
+      
+      <line x1="-185" y1="40" x2="-15" y2="-60" />
+      <line x1="-185" y1="40" x2="-15" y2="-20" />
+      <line x1="-185" y1="40" x2="-15" y2="20" />
+      <line x1="-185" y1="40" x2="-15" y2="60" />
+      
+      <line x1="-185" y1="80" x2="-15" y2="-60" />
+      <line x1="-185" y1="80" x2="-15" y2="-20" />
+      <line x1="-185" y1="80" x2="-15" y2="20" />
+      <line x1="-185" y1="80" x2="-15" y2="60" />
+      
+      <!-- Connect Layer 2 to Layer 3 -->
+      <line x1="15" y1="-60" x2="185" y2="-40" />
+      <line x1="15" y1="-60" x2="185" y2="0" />
+      <line x1="15" y1="-60" x2="185" y2="40" />
+      
+      <line x1="15" y1="-20" x2="185" y2="-40" />
+      <line x1="15" y1="-20" x2="185" y2="0" />
+      <line x1="15" y1="-20" x2="185" y2="40" />
+      
+      <line x1="15" y1="20" x2="185" y2="-40" />
+      <line x1="15" y1="20" x2="185" y2="0" />
+      <line x1="15" y1="20" x2="185" y2="40" />
+      
+      <line x1="15" y1="60" x2="185" y2="-40" />
+      <line x1="15" y1="60" x2="185" y2="0" />
+      <line x1="15" y1="60" x2="185" y2="40" />
+    </g>
+  </g>
+  
+  <!-- Lock icon for authentication -->
+  <g transform="translate(400, 150)">
+    <rect x="-30" y="-10" width="60" height="50" rx="5" fill="#6366f1" />
+    <rect x="-40" y="-30" width="80" height="30" rx="15" fill="none" stroke="#6366f1" stroke-width="10" />
+    <circle cx="0" cy="15" r="8" fill="#18181b" />
+    <rect x="-2" y="15" width="4" height="15" fill="#18181b" />
+  </g>
+  
+  <!-- Text elements -->
+  <g transform="translate(400, 450)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#ffffff">Semantic Authenticator</text>
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#a78bfa">AI-Powered Authentication</text>
+  </g>
+  
+  <!-- Animated particles -->
+  <g fill="#a78bfa" opacity="0.7">
+    <circle cx="100" cy="100" r="3" />
+    <circle cx="200" cy="150" r="2" />
+    <circle cx="300" cy="200" r="4" />
+    <circle cx="400" cy="100" r="2" />
+    <circle cx="500" cy="250" r="3" />
+    <circle cx="600" cy="300" r="2" />
+    <circle cx="700" cy="150" r="4" />
+    <circle cx="150" cy="350" r="3" />
+    <circle cx="250" cy="450" r="2" />
+    <circle cx="350" cy="500" r="3" />
+    <circle cx="450" cy="400" r="2" />
+    <circle cx="550" cy="350" r="4" />
+    <circle cx="650" cy="450" r="3" />
+    <circle cx="750" cy="500" r="2" />
+  </g>
+  
+  <!-- Text flow lines representing semantic understanding -->
+  <g stroke="#a78bfa" stroke-width="1" opacity="0.5">
+    <path d="M100,550 C200,530 300,570 400,550 C500,530 600,570 700,550" fill="none" />
+    <path d="M100,530 C200,510 300,550 400,530 C500,510 600,550 700,530" fill="none" />
+    <path d="M100,510 C200,490 300,530 400,510 C500,490 600,530 700,510" fill="none" />
+  </g>
+</svg>

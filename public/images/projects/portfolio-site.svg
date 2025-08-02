@@ -1,0 +1,133 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0f172a" />
+  
+  <!-- Grid pattern -->
+  <g stroke="#ffffff10" stroke-width="1">
+    <g id="vertical-lines">
+      <line x1="100" y1="0" x2="100" y2="600" />
+      <line x1="200" y1="0" x2="200" y2="600" />
+      <line x1="300" y1="0" x2="300" y2="600" />
+      <line x1="400" y1="0" x2="400" y2="600" />
+      <line x1="500" y1="0" x2="500" y2="600" />
+      <line x1="600" y1="0" x2="600" y2="600" />
+      <line x1="700" y1="0" x2="700" y2="600" />
+    </g>
+    <g id="horizontal-lines">
+      <line x1="0" y1="100" x2="800" y2="100" />
+      <line x1="0" y1="200" x2="800" y2="200" />
+      <line x1="0" y1="300" x2="800" y2="300" />
+      <line x1="0" y1="400" x2="800" y2="400" />
+      <line x1="0" y1="500" x2="800" y2="500" />
+    </g>
+  </g>
+  
+  <!-- Gradient overlay -->
+  <rect width="800" height="600" fill="url(#grad1)" opacity="0.4" />
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.7" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Browser window -->
+  <g transform="translate(400, 300)">
+    <!-- Browser frame -->
+    <rect x="-200" y="-150" width="400" height="300" rx="8" fill="#1e293b" />
+    
+    <!-- Browser toolbar -->
+    <rect x="-200" y="-150" width="400" height="30" rx="8" fill="#334155" />
+    
+    <!-- Browser buttons -->
+    <circle cx="-180" cy="-135" r="5" fill="#ef4444" />
+    <circle cx="-165" cy="-135" r="5" fill="#f59e0b" />
+    <circle cx="-150" cy="-135" r="5" fill="#10b981" />
+    
+    <!-- URL bar -->
+    <rect x="-130" y="-142" width="310" height="14" rx="7" fill="#475569" />
+    <text x="-120" y="-132" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1">www.made-something.com</text>
+    
+    <!-- Browser content -->
+    <rect x="-190" y="-110" width="380" height="250" fill="#0f172a" />
+    
+    <!-- Header section -->
+    <rect x="-190" y="-110" width="380" height="60" fill="#1e293b" />
+    <text x="-170" y="-80" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Jason Made Something</text>
+    <g transform="translate(150, -80)">
+      <rect x="0" y="-10" width="20" height="5" rx="2" fill="#cbd5e1" />
+      <rect x="30" y="-10" width="20" height="5" rx="2" fill="#cbd5e1" />
+      <rect x="60" y="-10" width="20" height="5" rx="2" fill="#cbd5e1" />
+    </g>
+    
+    <!-- Hero section -->
+    <rect x="-170" y="-40" width="340" height="100" rx="5" fill="#334155" />
+    <text x="-150" y="-10" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">Full Stack Developer</text>
+    <text x="-150" y="20" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Building modern web applications</text>
+    <rect x="-150" y="40" width="80" height="20" rx="5" fill="#3b82f6" />
+    <text x="-110" y="54" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#ffffff">Projects</text>
+    
+    <!-- Projects grid -->
+    <g transform="translate(-170, 100)">
+      <rect x="0" y="0" width="100" height="80" rx="5" fill="#1e293b" />
+      <rect x="120" y="0" width="100" height="80" rx="5" fill="#1e293b" />
+      <rect x="240" y="0" width="100" height="80" rx="5" fill="#1e293b" />
+    </g>
+  </g>
+  
+  <!-- Code elements -->
+  <g transform="translate(150, 150)" opacity="0.7">
+    <text font-family="monospace" font-size="12" fill="#38bdf8">
+      <tspan x="0" y="0">&lt;div className="container"&gt;</tspan>
+      <tspan x="0" y="20">  &lt;Header /&gt;</tspan>
+      <tspan x="0" y="40">  &lt;Hero /&gt;</tspan>
+      <tspan x="0" y="60">  &lt;Projects data={projects} /&gt;</tspan>
+      <tspan x="0" y="80">&lt;/div&gt;</tspan>
+    </text>
+  </g>
+  
+  <g transform="translate(600, 450)" opacity="0.7">
+    <text font-family="monospace" font-size="12" fill="#a78bfa">
+      <tspan x="0" y="0">import { motion } from 'framer-motion';</tspan>
+      <tspan x="0" y="20">import { useState } from 'react';</tspan>
+      <tspan x="0" y="40">import { NextPage } from 'next';</tspan>
+      <tspan x="0" y="60">import Image from 'next/image';</tspan>
+    </text>
+  </g>
+  
+  <!-- Title -->
+  <g transform="translate(400, 50)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#ffffff">Portfolio Website</text>
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#60a5fa">Next.js + TailwindCSS</text>
+  </g>
+  
+  <!-- Tech stack icons -->
+  <g transform="translate(400, 550)">
+    <!-- React -->
+    <g transform="translate(-150, 0)">
+      <circle cx="0" cy="0" r="20" fill="#61dafb" opacity="0.8" />
+      <circle cx="0" cy="0" r="6" fill="#0f172a" />
+      <ellipse cx="0" cy="0" rx="20" ry="7" fill="none" stroke="#61dafb" stroke-width="3" transform="rotate(30)" />
+      <ellipse cx="0" cy="0" rx="20" ry="7" fill="none" stroke="#61dafb" stroke-width="3" transform="rotate(90)" />
+      <ellipse cx="0" cy="0" rx="20" ry="7" fill="none" stroke="#61dafb" stroke-width="3" transform="rotate(150)" />
+    </g>
+    
+    <!-- Next.js -->
+    <g transform="translate(-50, 0)">
+      <circle cx="0" cy="0" r="20" fill="#ffffff" opacity="0.8" />
+      <text x="0" y="7" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#000000">N</text>
+    </g>
+    
+    <!-- TailwindCSS -->
+    <g transform="translate(50, 0)">
+      <circle cx="0" cy="0" r="20" fill="#38bdf8" opacity="0.8" />
+      <text x="0" y="7" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#ffffff">T</text>
+    </g>
+    
+    <!-- TypeScript -->
+    <g transform="translate(150, 0)">
+      <circle cx="0" cy="0" r="20" fill="#3178c6" opacity="0.8" />
+      <text x="0" y="7" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#ffffff">TS</text>
+    </g>
+  </g>
+</svg>
