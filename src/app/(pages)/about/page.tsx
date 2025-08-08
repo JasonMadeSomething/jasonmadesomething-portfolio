@@ -55,8 +55,9 @@ export default function AboutPage() {
         console.error("Error fetching about data:", error);
         
         // For development, use the local data directly
-        import('../../data/about.json').then((data) => {
-          setAboutData(data);
+        import('../../data/about.json').then((module) => {
+          // Dynamic JSON imports return a module object with the data on `default`
+          setAboutData(module.default);
           setIsLoaded(true);
         });
       }
